@@ -1,0 +1,78 @@
+html {
+  background-color: #EEF9BF;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+
+
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+  font-weight: 700;
+  color: #75B79E;
+  font-size: 56px;
+}
+
+.gameboard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.flip-container {
+  width: 117px;
+  height: 146px;
+  perspective: 1000px;
+  background-color: #A7E9AF;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+
+  margin: 10px;
+  
+   img {
+    width: 85%;
+    height: 80%;
+  } 
+
+}
+.flip-container.flipped {
+  transform: rotateY(180deg);
+}
+.flip-front, .flip-back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 614px) {
+  .header {
+    font-size: 36px;
+  }
+
+  .gameboard {
+    flex-direction: column;
+  }
+}
